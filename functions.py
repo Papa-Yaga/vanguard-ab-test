@@ -20,6 +20,7 @@ def clean_dtypes(df):
     df["clnt_tenure_mnth"] = df["clnt_tenure_mnth"].astype(int)
     df["clnt_age"] = df["clnt_age"].apply(np.ceil).astype(int)
     df["gendr"] = df["gendr"].apply(lambda x: "U" if "X" in x else x)
+    df["num_accts"] = df["num_accts"].astype(int)
     df["calls_6_mnth"] = df["calls_6_mnth"].astype(int)
     df["logons_6_mnth"] = df["logons_6_mnth"].astype(int)
     return df
