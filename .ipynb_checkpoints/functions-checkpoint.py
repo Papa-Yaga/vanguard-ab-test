@@ -14,7 +14,7 @@ def clean_dtypes(df):
         except Exception as e:
             print(f"{e} during {col}")
     
-    df.drop(columns=["Unnamed: 0"], axis=1)
+    df.drop(columns=["Unnamed: 0"], axis=1, inplace=True)
     df["date_time"] = pd.to_datetime(df["date_time"])
     df["clnt_tenure_yr"] = df["clnt_tenure_yr"].astype(int)
     df["clnt_tenure_mnth"] = df["clnt_tenure_mnth"].astype(int)
@@ -24,8 +24,8 @@ def clean_dtypes(df):
 
 def rename_columns(df):
     
-    df.rename(columns={"clnt_tenure_yr": "client_years",
-                            'clnt_tenure_mnth	': 'client_month',
+    df.rename(columns={"clnt_tenure_yr":"client_years",
+                            "clnt_tenure_mnth":"client_month",
                             "clnt_age":"client_age",
                             "gendr":"gender",
                             "num_accts":"num_accounts",
