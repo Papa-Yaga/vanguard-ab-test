@@ -31,3 +31,14 @@ def clean_dtypes(df):
     df["gendr"] = df["gendr"].apply(lambda x: "U" if "X" in x else x)
     return df
 
+def rename_columns(df):
+    
+    df.rename(columns={"clnt_tenure_yr": "client_years",
+                            'clnt_tenure_mnth	': 'client_month',
+                            "clnt_age":"client_age",
+                            "gendr":"gender",
+                            "num_accts":"num_accounts",
+                            "bal":"balance",
+                            "calls_6_mnth":"calls_6_months",
+                            "logons_6_mnth":"logins_6"},inplace= True)
+    return df
