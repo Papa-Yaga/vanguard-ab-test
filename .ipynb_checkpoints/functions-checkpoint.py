@@ -1,14 +1,5 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-import warnings
-
-warnings.filterwarnings("ignore", category=DeprecationWarning)
-warnings.filterwarnings("ignore", category=FutureWarning)
-
-%matplotlib inline
 
 def clean_dtypes(df):
 
