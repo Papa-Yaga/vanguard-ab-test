@@ -14,18 +14,30 @@ def clean_dtypes(df):
         except Exception as e:
             print(f"{e} during {col}")
     
+<<<<<<< HEAD
     df.drop(columns=["Unnamed: 0"], axis=1,inplace=True)
+=======
+    df.drop(columns=["Unnamed: 0"], axis=1, inplace=True)
+>>>>>>> 79e3852f3cca57ed2c048c8cfb40253df9d02ede
     df["date_time"] = pd.to_datetime(df["date_time"])
     df["clnt_tenure_yr"] = df["clnt_tenure_yr"].astype(int)
     df["clnt_tenure_mnth"] = df["clnt_tenure_mnth"].astype(int)
     df["clnt_age"] = df["clnt_age"].apply(np.ceil).astype(int)
     df["gendr"] = df["gendr"].apply(lambda x: "U" if "X" in x else x)
+    df["num_accts"] = df["num_accts"].astype(int)
+    df["calls_6_mnth"] = df["calls_6_mnth"].astype(int)
+    df["logons_6_mnth"] = df["logons_6_mnth"].astype(int)
     return df
 
 def rename_columns(df):
     
+<<<<<<< HEAD
     df.rename(columns={"clnt_tenure_yr": "client_years",
                             "clnt_tenure_mnth": "client_month",
+=======
+    df.rename(columns={"clnt_tenure_yr":"client_years",
+                            "clnt_tenure_mnth":"client_month",
+>>>>>>> 79e3852f3cca57ed2c048c8cfb40253df9d02ede
                             "clnt_age":"client_age",
                             "gendr":"gender",
                             "num_accts":"num_accounts",
